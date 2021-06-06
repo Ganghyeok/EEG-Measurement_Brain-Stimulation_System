@@ -1,0 +1,538 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title "EEG Measurement & Brain Stimulation System (4/4)"
+Date "2021-04-09"
+Rev "Ver1.0A"
+Comp "Arkx"
+Comment1 "Designed by Ganghyeok Lim"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L power:+3.3V #PWR?
+U 1 1 620017E6
+P 2250 5200
+AR Path="/620017E6" Ref="#PWR?"  Part="1" 
+AR Path="/61D3EB21/620017E6" Ref="#PWR0134"  Part="1" 
+F 0 "#PWR0134" H 2250 5050 50  0001 C CNN
+F 1 "+3.3V" H 2150 5350 50  0000 L CNN
+F 2 "" H 2250 5200 50  0001 C CNN
+F 3 "" H 2250 5200 50  0001 C CNN
+	1    2250 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5250 2250 5250
+Wire Wire Line
+	2250 5250 2250 5200
+Text GLabel 2450 5350 0    50   Input ~ 0
+UART1_TX
+Text GLabel 2450 5450 0    50   Output ~ 0
+UART1_RX
+$Comp
+L power:GNDD #PWR?
+U 1 1 620017F0
+P 2450 5600
+AR Path="/620017F0" Ref="#PWR?"  Part="1" 
+AR Path="/61D3EB21/620017F0" Ref="#PWR0135"  Part="1" 
+F 0 "#PWR0135" H 2450 5350 50  0001 C CNN
+F 1 "GNDD" H 2454 5445 50  0000 C CNN
+F 2 "" H 2450 5600 50  0001 C CNN
+F 3 "" H 2450 5600 50  0001 C CNN
+	1    2450 5600
+	1    0    0    -1  
+$EndComp
+Wire Notes Line width 31 style solid
+	3550 6200 1550 6200
+Wire Notes Line width 31 style solid
+	1550 6200 1550 4600
+Wire Notes Line width 31 style solid
+	1550 4600 3550 4600
+Wire Notes Line width 31 style solid
+	3550 4600 3550 6200
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 620017FB
+P 2650 5350
+AR Path="/620017FB" Ref="J?"  Part="1" 
+AR Path="/61D3EB21/620017FB" Ref="J11"  Part="1" 
+F 0 "J11" H 2800 5450 50  0000 L CNN
+F 1 "UART_Connector" H 2800 5350 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 2650 5350 50  0001 C CNN
+F 3 "~" H 2650 5350 50  0001 C CNN
+	1    2650 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 5550 2450 5600
+$Comp
+L Connector:USB_B_Mini J10
+U 1 1 60737933
+P 1500 2100
+F 0 "J10" H 1557 2567 50  0000 C CNN
+F 1 "USB_B_Mini" H 1557 2476 50  0000 C CNN
+F 2 "Connector_USB:USB_Mini-B_Lumberg_2486_01_Horizontal" H 1650 2050 50  0001 C CNN
+F 3 "~" H 1650 2050 50  0001 C CNN
+	1    1500 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VBUS #PWR0132
+U 1 1 6073A36E
+P 2050 1700
+F 0 "#PWR0132" H 2050 1550 50  0001 C CNN
+F 1 "VBUS" H 2065 1873 50  0000 C CNN
+F 2 "" H 2050 1700 50  0001 C CNN
+F 3 "" H 2050 1700 50  0001 C CNN
+	1    2050 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1900 2050 1900
+Wire Wire Line
+	2050 1900 2050 1700
+Wire Wire Line
+	1800 2100 2100 2100
+Wire Wire Line
+	1800 2200 2500 2200
+$Comp
+L Device:R_US R61
+U 1 1 6073B492
+P 1450 2650
+F 0 "R61" V 1350 2950 50  0000 C CNN
+F 1 "1M" V 1450 2950 50  0000 C CNN
+F 2 "My_Libraries:R3216_Metric" V 1490 2640 50  0001 C CNN
+F 3 "~" H 1450 2650 50  0001 C CNN
+	1    1450 2650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1500 2500 1600 2500
+Wire Wire Line
+	1600 2500 1600 2650
+Wire Wire Line
+	1400 2500 1300 2500
+Wire Wire Line
+	1300 2500 1300 2650
+$Comp
+L Device:C C65
+U 1 1 6073D555
+P 1450 2850
+F 0 "C65" V 1400 3150 50  0000 C CNN
+F 1 "100nF" V 1500 3200 50  0000 C CNN
+F 2 "My_Libraries:C3216_Metric" H 1488 2700 50  0001 C CNN
+F 3 "~" H 1450 2850 50  0001 C CNN
+	1    1450 2850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1300 2650 1300 2850
+Connection ~ 1300 2650
+Wire Wire Line
+	1600 2650 1600 2850
+Connection ~ 1600 2650
+$Comp
+L Device:C C66
+U 1 1 6073E158
+P 2100 2500
+F 0 "C66" H 1900 2450 50  0000 C CNN
+F 1 "15pF" H 1900 2550 50  0000 C CNN
+F 2 "My_Libraries:C3216_Metric" H 2138 2350 50  0001 C CNN
+F 3 "~" H 2100 2500 50  0001 C CNN
+	1    2100 2500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C67
+U 1 1 6073FAC0
+P 2500 2500
+F 0 "C67" H 2300 2450 50  0000 C CNN
+F 1 "15pF" H 2300 2550 50  0000 C CNN
+F 2 "My_Libraries:C3216_Metric" H 2538 2350 50  0001 C CNN
+F 3 "~" H 2500 2500 50  0001 C CNN
+	1    2500 2500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2100 2100 2100 2350
+Connection ~ 2100 2100
+Wire Wire Line
+	2100 2100 2900 2100
+Wire Wire Line
+	2500 2200 2500 2350
+Connection ~ 2500 2200
+Wire Wire Line
+	2500 2200 2900 2200
+$Comp
+L power:GNDD #PWR0133
+U 1 1 60741CC0
+P 2100 2800
+F 0 "#PWR0133" H 2100 2550 50  0001 C CNN
+F 1 "GNDD" H 2104 2645 50  0000 C CNN
+F 2 "" H 2100 2800 50  0001 C CNN
+F 3 "" H 2100 2800 50  0001 C CNN
+	1    2100 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0136
+U 1 1 607421DF
+P 2500 2800
+F 0 "#PWR0136" H 2500 2550 50  0001 C CNN
+F 1 "GNDD" H 2504 2645 50  0000 C CNN
+F 2 "" H 2500 2800 50  0001 C CNN
+F 3 "" H 2500 2800 50  0001 C CNN
+	1    2500 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR0131
+U 1 1 607423EF
+P 1600 2950
+F 0 "#PWR0131" H 1600 2700 50  0001 C CNN
+F 1 "GNDD" H 1604 2795 50  0000 C CNN
+F 2 "" H 1600 2950 50  0001 C CNN
+F 3 "" H 1600 2950 50  0001 C CNN
+	1    1600 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 2850 1600 2950
+Connection ~ 1600 2850
+Wire Wire Line
+	2100 2800 2100 2650
+Wire Wire Line
+	2500 2650 2500 2800
+NoConn ~ 1800 2300
+Text GLabel 2900 2100 2    50   BiDi ~ 0
+D+
+Text GLabel 2900 2200 2    50   BiDi ~ 0
+D-
+$Comp
+L Device:LED D8
+U 1 1 60746102
+P 3750 2000
+F 0 "D8" V 3789 1882 50  0000 R CNN
+F 1 "LED(RED)" V 3698 1882 50  0000 R CNN
+F 2 "My_Libraries:LED_3216_Metric" H 3750 2000 50  0001 C CNN
+F 3 "~" H 3750 2000 50  0001 C CNN
+	1    3750 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_US R62
+U 1 1 60746601
+P 3750 2550
+F 0 "R62" H 3818 2596 50  0000 L CNN
+F 1 "330" H 3818 2505 50  0000 L CNN
+F 2 "My_Libraries:R3216_Metric" V 3790 2540 50  0001 C CNN
+F 3 "~" H 3750 2550 50  0001 C CNN
+	1    3750 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 2150 3750 2400
+$Comp
+L power:VBUS #PWR0137
+U 1 1 607474B8
+P 3750 1600
+F 0 "#PWR0137" H 3750 1450 50  0001 C CNN
+F 1 "VBUS" H 3765 1773 50  0000 C CNN
+F 2 "" H 3750 1600 50  0001 C CNN
+F 3 "" H 3750 1600 50  0001 C CNN
+	1    3750 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 1600 3750 1850
+$Comp
+L power:GNDD #PWR0138
+U 1 1 60748029
+P 3750 2950
+F 0 "#PWR0138" H 3750 2700 50  0001 C CNN
+F 1 "GNDD" H 3754 2795 50  0000 C CNN
+F 2 "" H 3750 2950 50  0001 C CNN
+F 3 "" H 3750 2950 50  0001 C CNN
+	1    3750 2950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3750 2700 3750 2950
+$Comp
+L My_Libraries:CP2102 U14
+U 1 1 60748E2E
+P 8950 3450
+F 0 "U14" H 8950 4615 50  0000 C CNN
+F 1 "CP2102" H 8950 4524 50  0000 C CNN
+F 2 "My_Libraries:VFQFN-28-1EP_5x5mm_HandSolder" H 8900 3700 50  0001 C CNN
+F 3 "" H 8900 3700 50  0001 C CNN
+	1    8950 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R65
+U 1 1 60749C51
+P 8050 2550
+F 0 "R65" V 7845 2550 50  0000 C CNN
+F 1 "4.7k" V 7936 2550 50  0000 C CNN
+F 2 "My_Libraries:R3216_Metric" V 8090 2540 50  0001 C CNN
+F 3 "~" H 8050 2550 50  0001 C CNN
+	1    8050 2550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8450 2550 8200 2550
+Wire Wire Line
+	7900 2550 7550 2550
+Wire Wire Line
+	7550 2550 7550 2650
+Wire Wire Line
+	7550 2650 8450 2650
+$Comp
+L Device:CP1 C69
+U 1 1 6074B958
+P 10000 2900
+F 0 "C69" H 10115 2946 50  0000 L CNN
+F 1 "1uF/16V" H 10115 2855 50  0000 L CNN
+F 2 "My_Libraries:C3216_Tantal_Metric" H 10000 2900 50  0001 C CNN
+F 3 "~" H 10000 2900 50  0001 C CNN
+	1    10000 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9450 2550 10000 2550
+Wire Wire Line
+	10000 2550 10000 2750
+$Comp
+L power:GNDD #PWR0144
+U 1 1 6074D0F3
+P 10000 3250
+F 0 "#PWR0144" H 10000 3000 50  0001 C CNN
+F 1 "GNDD" H 10004 3095 50  0000 C CNN
+F 2 "" H 10000 3250 50  0001 C CNN
+F 3 "" H 10000 3250 50  0001 C CNN
+	1    10000 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10000 3050 10000 3250
+Wire Wire Line
+	7550 2550 7550 2150
+Wire Wire Line
+	7550 2150 10000 2150
+Wire Wire Line
+	10000 2150 10000 2550
+Connection ~ 7550 2550
+Connection ~ 10000 2550
+$Comp
+L power:+3.3V #PWR0143
+U 1 1 6075216F
+P 10000 1700
+F 0 "#PWR0143" H 10000 1550 50  0001 C CNN
+F 1 "+3.3V" H 10015 1873 50  0000 C CNN
+F 2 "" H 10000 1700 50  0001 C CNN
+F 3 "" H 10000 1700 50  0001 C CNN
+	1    10000 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10000 1700 10000 2150
+Connection ~ 10000 2150
+Text GLabel 7300 3250 0    50   Output ~ 0
+UART1_RX
+Text GLabel 7300 3350 0    50   Input ~ 0
+UART1_TX
+Wire Wire Line
+	7300 3250 7550 3250
+Wire Wire Line
+	7300 3350 8000 3350
+$Comp
+L Device:R_US R64
+U 1 1 60758D0D
+P 8000 3750
+F 0 "R64" H 8068 3796 50  0000 L CNN
+F 1 "330" H 8068 3705 50  0000 L CNN
+F 2 "My_Libraries:R3216_Metric" V 8040 3740 50  0001 C CNN
+F 3 "~" H 8000 3750 50  0001 C CNN
+	1    8000 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 3600 8000 3350
+Connection ~ 8000 3350
+Wire Wire Line
+	8000 3350 8450 3350
+$Comp
+L Device:R_US R63
+U 1 1 6075B6DD
+P 7550 3750
+F 0 "R63" H 7618 3796 50  0000 L CNN
+F 1 "330" H 7618 3705 50  0000 L CNN
+F 2 "My_Libraries:R3216_Metric" V 7590 3740 50  0001 C CNN
+F 3 "~" H 7550 3750 50  0001 C CNN
+	1    7550 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 3600 7550 3250
+Connection ~ 7550 3250
+Wire Wire Line
+	7550 3250 8450 3250
+$Comp
+L Device:LED D9
+U 1 1 6075DD50
+P 7550 4300
+F 0 "D9" H 7500 4450 50  0000 L CNN
+F 1 "LED(BLUE)" H 7350 4550 50  0000 L CNN
+F 2 "My_Libraries:LED_3216_Metric" H 7550 4300 50  0001 C CNN
+F 3 "~" H 7550 4300 50  0001 C CNN
+	1    7550 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D10
+U 1 1 6075E3C9
+P 8000 4300
+F 0 "D10" H 7950 4450 50  0000 L CNN
+F 1 "LED(BLUE)" H 7800 4550 50  0000 L CNN
+F 2 "My_Libraries:LED_3216_Metric" H 8000 4300 50  0001 C CNN
+F 3 "~" H 8000 4300 50  0001 C CNN
+	1    8000 4300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7550 3900 7550 4150
+Wire Wire Line
+	8000 3900 8000 4150
+$Comp
+L power:+3.3V #PWR0141
+U 1 1 60760199
+P 7050 4850
+F 0 "#PWR0141" H 7050 4700 50  0001 C CNN
+F 1 "+3.3V" V 7065 4978 50  0000 L CNN
+F 2 "" H 7050 4850 50  0001 C CNN
+F 3 "" H 7050 4850 50  0001 C CNN
+	1    7050 4850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7050 4850 7550 4850
+Wire Wire Line
+	8000 4850 8000 4450
+Wire Wire Line
+	7550 4450 7550 4850
+Connection ~ 7550 4850
+Wire Wire Line
+	7550 4850 8000 4850
+$Comp
+L power:GNDD #PWR0142
+U 1 1 60764EBB
+P 9550 4350
+F 0 "#PWR0142" H 9550 4100 50  0001 C CNN
+F 1 "GNDD" H 9554 4195 50  0000 C CNN
+F 2 "" H 9550 4350 50  0001 C CNN
+F 3 "" H 9550 4350 50  0001 C CNN
+	1    9550 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9450 4250 9550 4250
+Wire Wire Line
+	9550 4250 9550 4350
+Text GLabel 8100 2950 0    50   BiDi ~ 0
+D+
+Text GLabel 8100 3050 0    50   BiDi ~ 0
+D-
+Wire Wire Line
+	8100 2950 8450 2950
+Wire Wire Line
+	8100 3050 8450 3050
+NoConn ~ 8450 3550
+NoConn ~ 8450 3650
+NoConn ~ 8450 3750
+NoConn ~ 8450 3850
+NoConn ~ 8450 3950
+NoConn ~ 8450 4050
+NoConn ~ 8450 4250
+NoConn ~ 8450 4350
+NoConn ~ 9450 3850
+NoConn ~ 9450 3750
+NoConn ~ 9450 3650
+NoConn ~ 9450 3550
+NoConn ~ 9450 3450
+NoConn ~ 9450 3350
+NoConn ~ 9450 3250
+NoConn ~ 9450 3150
+NoConn ~ 9450 3050
+NoConn ~ 9450 2950
+NoConn ~ 9450 2850
+Wire Wire Line
+	8450 2750 6450 2750
+$Comp
+L Device:CP1 C68
+U 1 1 6077FEFE
+P 6450 3450
+F 0 "C68" H 6565 3496 50  0000 L CNN
+F 1 "1uF/16V" H 6565 3405 50  0000 L CNN
+F 2 "My_Libraries:C3216_Tantal_Metric" H 6450 3450 50  0001 C CNN
+F 3 "~" H 6450 3450 50  0001 C CNN
+	1    6450 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 2750 6450 3300
+Wire Wire Line
+	6450 3600 6450 4150
+$Comp
+L power:GNDD #PWR0140
+U 1 1 60785B8E
+P 6450 4150
+F 0 "#PWR0140" H 6450 3900 50  0001 C CNN
+F 1 "GNDD" H 6454 3995 50  0000 C CNN
+F 2 "" H 6450 4150 50  0001 C CNN
+F 3 "" H 6450 4150 50  0001 C CNN
+	1    6450 4150
+	1    0    0    -1  
+$EndComp
+Connection ~ 6450 2750
+$Comp
+L power:VBUS #PWR0139
+U 1 1 60788877
+P 6450 1700
+F 0 "#PWR0139" H 6450 1550 50  0001 C CNN
+F 1 "VBUS" H 6465 1873 50  0000 C CNN
+F 2 "" H 6450 1700 50  0001 C CNN
+F 3 "" H 6450 1700 50  0001 C CNN
+	1    6450 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6450 1700 6450 2750
+Wire Notes Line width 31 style solid
+	950  1200 950  3400
+Wire Notes Line width 31 style solid
+	950  3400 4300 3400
+Wire Notes Line width 31 style solid
+	4300 3400 4300 1200
+Wire Notes Line width 31 style solid
+	4300 1200 950  1200
+Wire Notes Line width 31 style solid
+	5900 1150 5900 5300
+Wire Notes Line width 31 style solid
+	5900 5300 10700 5300
+Wire Notes Line width 31 style solid
+	10700 5300 10700 1150
+Wire Notes Line width 31 style solid
+	10700 1150 5900 1150
+Text Notes 1600 6600 0    138  ~ 28
+UART CONNECTOR
+Text Notes 1300 3800 0    138  ~ 28
+USB-B MINI CONNECTOR
+Text Notes 7200 5700 0    138  ~ 28
+USB to UART BRIDGE
+$EndSCHEMATC
